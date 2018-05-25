@@ -23,5 +23,6 @@
 
   <item name="qs_subtitles" type="id"/>
 
+  <item name="qs_error_placeholder" type="id"/>
 
 </resources>
