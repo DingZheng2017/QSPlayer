@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
+            String videoPath = "http://ql.qsxt.io/live_record_905_1526615963878.mp4";
+            playView.prepareAndStartPlay(videoPath);
+            playView.replacePlayerControlView(new CustomPlayerControlView(this));
+
         }
     }
 

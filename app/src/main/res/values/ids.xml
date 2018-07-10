@@ -19,8 +19,6 @@
 
   <item name="controller_placeholder" type="id"/>
 
-  <!--<item name="overlay" type="id"/>-->
-
   <item name="title_placeholder" type="id"/>
 
   <item name="error_placeholder" type="id"/>

@@ -417,4 +417,11 @@ public class CustomPlayerView extends LinearLayout implements
         return target;
     }
 
+    public void prepareAndStartPlay(String videoPath){
+        playerView.prepareAndStartPlay(videoPath);
+    }
+
+    public void replacePlayerControlView(MediaController customController) {
+        playerView.replacePlayerControlView(customController);
+    }
 }
