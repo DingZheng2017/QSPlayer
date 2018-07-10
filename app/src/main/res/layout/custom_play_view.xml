@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_FF333333"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/vitamio_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <self.dz.qsplayer.PlayerView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|center" />
+
+        <ImageView
+            android:id="@+id/coverView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/find_video_bg_landscape" />
+
+        <LinearLayout
+            android:id="@+id/error_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_99000000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/error_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/dp_value_10"
+                android:gravity="center"
+                android:textColor="@color/color_FFFFFFFF"
+                android:textSize="@dimen/text_size_14" />
+
+            <TextView
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_value_18"
+                android:background="@drawable/item_solid_bg"
+                android:paddingBottom="@dimen/dp_value_7"
+                android:paddingLeft="@dimen/dp_value_15"
+                android:paddingRight="@dimen/dp_value_15"
+                android:paddingTop="@dimen/dp_value_7"
+                android:text="回到首页"
+                android:textColor="@color/color_FF4FE0A1"
+                android:textSize="@dimen/text_size_15" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/video_loading_container"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_value_35"
+            android:layout_centerInParent="true"
+            android:background="@color/color_99000000"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_value_10"
+            android:paddingRight="@dimen/dp_value_10"
+            android:visibility="gone">
+
+            <ProgressBar
+                style="@style/basePlayerViewProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_value_10"
+                android:gravity="center"
+                android:text="加载中，请稍后"
+                android:textColor="@color/color_FFFFFFFF"
+                android:textSize="@dimen/text_size_14" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/change_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/color_99000000"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_value_10"
+        android:text="50%"
+        android:textColor="@color/color_FFFFFFFF"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -15,14 +15,14 @@
 -->
 <resources>
 
-  <item name="qs_content_frame" type="id"/>
+  <item name="content_frame" type="id"/>
 
-  <item name="qs_controller_placeholder" type="id"/>
+  <item name="controller_placeholder" type="id"/>
 
-  <item name="qs_overlay" type="id"/>
+  <!--<item name="overlay" type="id"/>-->
 
-  <item name="qs_subtitles" type="id"/>
+  <item name="title_placeholder" type="id"/>
 
-  <item name="qs_error_placeholder" type="id"/>
+  <item name="error_placeholder" type="id"/>
 
 </resources>

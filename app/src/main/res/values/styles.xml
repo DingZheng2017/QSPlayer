@@ -6,6 +6,52 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="QS_Media_SeekBar" parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_holo_dark
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/scrubber_progress_horizontal_holo_dark
+        </item>
+        <item name="android:minHeight">@dimen/dp_value_2</item>
+        <item name="android:maxHeight">@dimen/dp_value_2</item>
+        <item name="android:thumb">@drawable/player_seek_thumb</item>
+        <item name="android:thumbOffset">@dimen/dp_value_9</item>
+        <item name="android:paddingLeft">@dimen/dp_value_9</item>
+        <item name="android:paddingRight">@dimen/dp_value_9</item>
+    </style>
+
+    <style name="QSMediaButton">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_width">@dimen/dp_value_30</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="QSMediaButton.Pause">
+        <item name="android:src">@drawable/qs_controls_pause</item>
+    </style>
+
+    <style name="QSMediaButton.ScreenToggle">
+        <item name="android:src">@drawable/qs_controls_toggle</item>
+    </style>
+
+    <style name="QS_Media_TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textSize_9</item>
+        <item name="android:textColor">@color/color_FFFFFFFF</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="basePlayerViewProgressBar">　
+        <item name="android:indeterminateDrawable">@drawable/player_progress_bar</item>　
+        <item name="android:minWidth">18dp</item>　
+        <item name="android:maxWidth">18dp</item>　
+        <item name="android:minHeight">18dp</item>　
+        <item name="android:maxHeight">18dp</item>
     </style>
 
 </resources>

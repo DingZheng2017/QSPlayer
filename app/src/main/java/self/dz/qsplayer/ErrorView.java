@@ -7,19 +7,19 @@ import android.widget.FrameLayout;
 
 import butterknife.ButterKnife;
 
-public class QSErrorView extends FrameLayout {
+public class ErrorView extends FrameLayout {
 
 
-    int playerLayoutId = R.layout.qs_player_error_view;
-    public QSErrorView(Context context) {
+    int playerLayoutId = R.layout.player_error_view;
+    public ErrorView(Context context) {
         this(context, null);
     }
 
-    public QSErrorView(Context context, AttributeSet attrs) {
+    public ErrorView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public QSErrorView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ErrorView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         LayoutInflater.from(context).inflate(playerLayoutId,this);
         ButterKnife.bind(this);
