@@ -10,4 +10,8 @@
     <color name="color_99000000">#99000000</color>
     <color name="color_FF4FE0A1">#FF4FE0A1</color>
     <color name="color_FF999999">#FF999999</color>
+    <color name="color_B3000000">#B3000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_66000000">#66000000</color>
+
 </resources>

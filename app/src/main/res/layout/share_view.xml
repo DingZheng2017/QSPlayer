@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/share_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_value_100"
+    android:layout_gravity="bottom"
+    android:background="@drawable/share_gradient_gray_color"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/share_intro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_value_30"
+        android:gravity="center_vertical"
+        android:text="分享至"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tab_weixin"
+        style="@style/share_tab"
+        android:drawableTop="@drawable/ic_weixin"
+        android:text="微信好友" />
+
+    <TextView
+        android:id="@+id/tab_weixin_moments"
+        style="@style/share_tab"
+        android:drawableTop="@drawable/ic_weixin_moments"
+        android:text="朋友圈" />
+
+    <TextView
+        android:id="@+id/tab_qq"
+        style="@style/share_tab"
+        android:drawableTop="@drawable/ic_qq"
+        android:text="QQ" />
+
+</LinearLayout>

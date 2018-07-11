@@ -1,6 +1,5 @@
 package self.dz.qsplayer;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.media.MediaPlayer;
@@ -12,10 +11,15 @@ import android.widget.FrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import self.dz.qsplayer.collection.PlayerStatusCollection;
+import self.dz.qsplayer.enums.TitleFunctions;
 
-public class PlayerView extends FrameLayout {
+public class PlayerView extends FrameLayout implements PlayerStatusCollection.StatusListener{
     @BindView(R.id.content_frame)
     FrameLayout contentFrame;
+
+    @BindView(R.id.rich_view_container)
+    FrameLayout richViewContainer;
 
     @BindView(R.id.error_placeholder)
     View errorPlaceHolder;
@@ -27,7 +31,6 @@ public class PlayerView extends FrameLayout {
 
     private ExpandVideoView playerView;//用于播放的view
     private FrameLayout playerController;//控制器
-    private PlayerControlView controller;
     private PlayerTitleView titleView;//控制器
     private View errView;//错误提示页面
     private Context context;
@@ -62,6 +65,7 @@ public class PlayerView extends FrameLayout {
         replacePlayerView();
         replacePlayerControlView(null);
         replaceTitleView();
+        PlayerStatusCollection.getInstance().subscribeListener(this);
     }
 
     private void replaceTitleView() {
@@ -78,21 +82,6 @@ public class PlayerView extends FrameLayout {
         }
     }
 
-    private void replacePlayerControlView() {
-        View controllerPlaceholder = findViewById(R.id.controller_placeholder);
-        if (controllerPlaceholder != null) {
-
-            this.playerController = new PlayerControlView(context, null, 0);
-            playerController.setLayoutParams(controllerPlaceholder.getLayoutParams());
-            ViewGroup parent = ((ViewGroup) controllerPlaceholder.getParent());
-            int controllerIndex = parent.indexOfChild(controllerPlaceholder);
-            parent.removeView(controllerPlaceholder);
-            parent.addView(playerController, controllerIndex);
-        } else {
-            this.playerController = null;
-        }
-    }
-
     public void replacePlayerControlView(MediaController customController) {
         View controllerPlaceholder = findViewById(R.id.controller_placeholder);
         if (customController == null ) {
@@ -104,8 +93,10 @@ public class PlayerView extends FrameLayout {
             int controllerIndex = parent.indexOfChild(controllerPlaceholder);
             parent.removeView(controllerPlaceholder);
             parent.addView(playerController, controllerIndex);
-        } else {
-            this.playerController = null;
+        }
+
+        if (customController != null && controllerPlaceholder != null) {
+            //TODO 空指针
         }
     }
 
@@ -118,6 +109,24 @@ public class PlayerView extends FrameLayout {
             playerView.setLayoutParams(params);
             contentFrame.addView(playerView, 0);
         }
+    }
+
+
+    public void replaceRichView(View richView) {
+//        View richViewPlaceholder = findViewById(R.id.rich_view_container);
+//        if (richViewPlaceholder != null) {
+//            richView.setLayoutParams(richViewPlaceholder.getLayoutParams());
+//            ViewGroup parent = ((ViewGroup) richViewPlaceholder.getParent());
+//            int richViewIndex = parent.indexOfChild(richViewPlaceholder);
+//            parent.removeView(richViewPlaceholder);
+//            parent.addView(richView, richViewIndex);
+//        }
+        ViewGroup.LayoutParams params =
+                new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        richView.setLayoutParams(params);
+        richViewContainer.removeAllViews();
+        richViewContainer.addView(richView,0);
     }
 
     public void prepareAndStartPlay(String path){
@@ -184,5 +193,20 @@ public class PlayerView extends FrameLayout {
 
     public void setBackListener(OnClickListener listener) {
         titleView.setBackListener(listener);
+    }
+
+    @Override
+    public void statusUpdate(TitleFunctions function) {
+        switch (function) {
+            case SHARE:
+                replaceRichView(new ShareView(context));
+                break;
+            case CLICP:
+                replaceRichView(new ClipShareView(context));
+                break;
+            case CATALOG:
+                replaceRichView(new CatalogView(context));
+                break;
+        }
     }
 }

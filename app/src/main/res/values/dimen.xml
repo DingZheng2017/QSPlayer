@@ -8,14 +8,24 @@
     <dimen name="dp_value_9">9dp</dimen>
     <dimen name="dp_value_10">10dp</dimen>
     <dimen name="dp_value_15">15dp</dimen>
+    <dimen name="dp_value_16">16dp</dimen>
+    <dimen name="dp_value_17">17dp</dimen>
     <dimen name="dp_value_18">18dp</dimen>
     <dimen name="dp_value_25">25dp</dimen>
     <dimen name="dp_value_30">30dp</dimen>
     <dimen name="dp_value_35">35dp</dimen>
     <dimen name="dp_value_71">71dp</dimen>
     <dimen name="dp_value_200">200dp</dimen>
+    <dimen name="dp_value_100">100dp</dimen>
     <dimen name="dp_value_110">110dp</dimen>
+    <dimen name="dp_value_263">263dp</dimen>
+    <dimen name="dp_value_51">51dp</dimen>
+    <dimen name="dp_value_220">220dp</dimen>
+    <dimen name="dp_value_3">3dp</dimen>
+    <dimen name="dp_value_45">45dp</dimen>
 
+    <dimen name="text_size_13">13sp</dimen>
     <dimen name="text_size_14">14sp</dimen>
     <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
 </resources>

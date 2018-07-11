@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -74,12 +77,7 @@ public class MainActivity extends AppCompatActivity {
             playerContainer.addView(playView,
                     new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
                             RelativeLayout.LayoutParams.MATCH_PARENT));
-            playView.setScreenToggleListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    screenToFull();
-                }
-            });
+
 
             playView.setBackListener(new View.OnClickListener() {
                 @Override
@@ -91,10 +89,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-            String videoPath = "http://ql.qsxt.io/live_record_905_1526615963878.mp4";
-            playView.prepareAndStartPlay(videoPath);
+           // String videoPath = "http://ql.qsxt.io/live_record_905_1526615963878.mp4";
+            File videoFile = new File(Environment.getExternalStorageDirectory(), "/Android/test.mp4");
+            playView.prepareAndStartPlay(videoFile.getPath());
             playView.replacePlayerControlView(new CustomPlayerControlView(this));
-
+            playView.setScreenToggleListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    screenToFull();
+                }
+            });
         }
     }
 

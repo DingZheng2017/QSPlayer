@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clip_share_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:paddingTop="@dimen/dp_value_15"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_value_71"
+        android:layout_marginLeft="@dimen/dp_value_10"
+        android:layout_marginRight="@dimen/dp_value_10">
+
+        <TextView
+            android:id="@+id/clip_share_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/share_clip_shape_gray"
+            android:paddingBottom="@dimen/dp_value_5"
+            android:paddingLeft="@dimen/dp_value_16"
+            android:paddingRight="@dimen/dp_value_16"
+            android:paddingTop="@dimen/dp_value_5"
+            android:text="取消"
+            android:textColor="@color/color_FFFFFFFF"
+            android:textSize="@dimen/text_size_16" />
+
+        <RelativeLayout
+            android:id="@+id/clip_hint_container"
+            android:layout_width="@dimen/dp_value_263"
+            android:layout_height="@dimen/dp_value_51"
+            android:layout_centerInParent="true"
+            android:background="@drawable/share_clip_shape_gray"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/clip_hint_txt_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/clip_hint_cur_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/clip_red_dot"
+                    android:drawablePadding="@dimen/dp_value_5"
+                    android:text="00:00"
+                    android:textColor="@color/color_FFFFFFFF"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:id="@+id/clip_hint_max_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/02:00"
+                    android:textColor="@color/color_FFFFFFFF"
+                    android:textSize="@dimen/text_size_13" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="    点击' "
+                    android:textColor="@color/color_FFFFFFFF"
+                    android:textSize="@dimen/text_size_13" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_clip_recording" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" '完成录制"
+                    android:textColor="@color/color_FFFFFFFF"
+                    android:textSize="@dimen/text_size_13" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/dp_value_220"
+                android:layout_height="@dimen/dp_value_3"
+                android:layout_below="@+id/clip_hint_txt_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_value_5"
+                android:background="@color/transparent"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/seekbar_progress_gradient" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/clipping_btn_red_bg"
+        android:layout_width="@dimen/dp_value_45"
+        android:layout_height="@dimen/dp_value_45"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dp_value_5"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_clip_record_red_bg"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/clip_completed_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dp_value_10"
+        android:src="@drawable/btn_clip_record_gray" />
+
+</RelativeLayout>
