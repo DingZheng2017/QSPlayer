@@ -41,6 +41,7 @@ ListView listView;
          String[] strs = new String[] {
                 "first", "second", "third", "fourth", "fifth"
         };
+         android.util.Log.d("ysh","test");
         listView.setAdapter(new ArrayAdapter<String>(context,
                 android.R.layout.simple_list_item_1, strs));
     }
